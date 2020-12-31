@@ -10,9 +10,9 @@ myForn.addEventListener('submit', (e) => {
     strings.forEach((element, index) => {
       // console.table('Line',index + 1,'has',element.split(';').filter((a) => a.trim()).length,'elements.');
       if (index === 0) {
-        out += ('||' + element.split(';').join('||') + '||<br>').replaceAll(/\|{4}/g, '||')
+        out += ('||' + element.split(';').join('||') + '||\r\n').replaceAll(/\|{4}/g, '||')
       } else {
-        out += ('|' + element.split(';').join('|') + '|<br>').replaceAll(/\|{2}/g, '|')
+        out += ('|' + element.split(';').join('|') + '|\r\n').replaceAll(/\|{2}/g, '|')
       }
     });
     myOut.value = out
@@ -24,5 +24,6 @@ myForn.addEventListener('submit', (e) => {
 
 function copyText() {
   myOut.select()
+  setSelectionRange(0, 99999);
   document.execCommand("copy")
 }
