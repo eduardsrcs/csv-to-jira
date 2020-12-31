@@ -13,13 +13,21 @@
   ;Varius;23;hello;<br>
   ;Varius;24;hello;<br>
   ;Varius;25;hello;<br>
+  <hr>
   <form action="#" name="csv">
-    <input type="text" name="divider" id=""><br>
+    <select name="divider" id="divider">
+      <option value=";">;</option>
+      <option value=",">,</option>
+      <option value=".">.</option>
+    </select>
+    <br>
+    <!-- <input type="text" name="divider" id="i"><br> -->
     <textarea name="csv" id="" cols="30" rows="10"></textarea><br>
     <input type="submit" value="make">
   </form>
   <hr>
-  <div id="out"></div>
+  <button onclick="copyText()">Copy</button>
+  <textarea id="out"></textarea>
   <script src="js/main.js"></script>
 </body>
 </html>
